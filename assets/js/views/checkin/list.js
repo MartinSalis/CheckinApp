@@ -41,14 +41,8 @@ define(
                             console.log("debut getCurrentPosition");
                             var crd = pos.coords;
 
-                            console.log('Your current position is:');
-                            console.log('Latitude : ' + crd.latitude);
-                            console.log('Longitude: ' + crd.longitude);
-                            console.log('More or less ' + crd.accuracy + ' meters.');
-
                             // Un nouvel objet LatLng pour Google Maps avec les paramètres de position
                             myLatlng = new google.maps.LatLng(crd.latitude, crd.longitude);
-                            console.log(myLatlng);
                             createMap();    
 
 
@@ -87,11 +81,9 @@ define(
                                 marker = new google.maps.Marker({
                                     position: checkinLatlng,
                                     map: map,
-                                    title: 'MyCheckin with id='+checkin.get('id')
+                                    title: checkin.get('user')['name']+". Creation : "+checkin.get('created_at')
                                 });
                                 markers.push(marker);
-                                console.log(marker);
-                                console.log(markers);
 
                             }); 
                             // Fin de la génération de la carte
