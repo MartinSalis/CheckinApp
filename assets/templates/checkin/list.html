@@ -1,10 +1,4 @@
-<h2>check in list</h2>
-
-<div id="map-canvas" style="width:100%; height:400;">
-	<!--<div id="loading" style="width: 100%; height: 100%; background: url('./assets/font/loading.gif') no-repeat center center;"></div>-->
-</div>
-
-<ul class="list-group">
+<ul id="checkin-list" class="list-group">
 	<% _.each(checkInList, function(checkin){ %>
 		<li class="list-group-item">
 		<b><%= checkin.get('id') %></b> -
@@ -13,3 +7,5 @@
 		</li>
 	<% }); %>
 </ul>
+
+<div id="map-canvas"></div>
